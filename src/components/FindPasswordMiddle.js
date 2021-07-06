@@ -2,12 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FindMiddleBlock = styled.form`
-    margin: 100px auto;
+    margin-top: 100px;
     width: 400px;
+    text-align:center;
     color: white;
+    margin-bottom: 40px;
+    h1{
+        font-size: 24px;
+        margin-bottom: 60px;
+    }
     input{
         width: 100%;
-        margin: 0;
         padding: 16px;
         box-sizing: border-box;
         background: transparent;
@@ -17,7 +22,6 @@ const FindMiddleBlock = styled.form`
     }
     button{
         width: 100%;
-        margin: 0;
         padding: 16px;
         border: none;
         background: transparent;

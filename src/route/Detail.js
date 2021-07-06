@@ -11,16 +11,26 @@ import { MdExpandMore } from "react-icons/md";
 import DetailFooter from '../components/DetailFooter';
 
 const GlobalStyle = createGlobalStyle`
+    .detailWrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        -webkit-box-align: center;
+        width: 100%;
+        min-height: 100vh;
+        background: black;
+        position: relative;
+    }
     .background{
         position:fixed;
         top: 0;
         left: 0;
-        background: rgba(0,0,0,0.6);
+        background: black;
         width: 100vw;
         height: 100vh;
         z-index: 1;
     }
-    .detailmore {
+    .detailmore-two {
         width: 36px;
         height: 36px;
         border-radius: 50%;
@@ -32,39 +42,36 @@ const GlobalStyle = createGlobalStyle`
         font-weight: bold;
         font-size: 36px;
         position: absolute;
-        left: 454px;
-        bottom: -1154px;
+        bottom: 360px;
         :hover {
             background: rgba(100,100,100,0.8);
         }
     }
+    a {
+        text-decoration: none;
+    }
 `
 
 const DetailLayout = styled.div`
-    left: 440px;
-    top: 2em;
-    width: 901.26px;
-    min-width: 850px;
-    z-index: 2;
     position: absolute;
-    color: black;
+    top: 60px;
+    width: 900px;
+    height: 100%;
     font-size: 16px;
-    z-index: 2;
-    -webkit-border-radius: 6px;
     border-radius: 6px;
     overflow: hidden;
     background: #181818;
-    height: 100%;
     overflow-y: auto;
     &::-webkit-scrollbar {
         display: none;
     }
+    z-index:999;
 `
 
 const Detail = ({videos}) => {
 
     return (
-        <>
+        <div className='detailWrap'>
             <GlobalStyle />
             <div className='background'></div>
             <Home videos={videos}></Home>
@@ -73,12 +80,9 @@ const Detail = ({videos}) => {
                 <DetailText />
                 <DetailList videos={videos}/>
                 <DetailList2 videos={videos}/>
-                <div className="detailmore">
-                    <MdExpandMore />
-                </div>
                 <DetailFooter />
             </DetailLayout>
-        </>
+        </div>
     )
 }
 

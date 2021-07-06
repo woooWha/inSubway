@@ -4,20 +4,30 @@ import { Link } from 'react-router-dom';
 
 const LoginTopBlock = styled.div`
     color: white;
+    width: 100%;
     .gohome{
-        font-size:26px;
+        position: relative;
+        top: 20px;
+        left: 20px;
+        font-size:18px;
         font-weight: bold;
         color: white;
+        text-align:left;
         text-decoration: none;
-        position: absolute;
-        left: 200px;
+    }
+    a {
+        text-decoration:none;
     }
 `
 
 const LoginLogo = () => {
     return (
         <LoginTopBlock>
-            <Link to='/' className="gohome">지옥철에서</Link>
+            <Link to='/'> 
+                <span className="gohome">
+                    지옥철에서
+                </span>
+            </Link>
         </LoginTopBlock>
     )
 }

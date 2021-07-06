@@ -5,10 +5,11 @@ import {createGlobalStyle} from 'styled-components';
 
 const VideoBarBlock = styled.div`
     display: flex;
-    padding: 0 350px;
+    width:100%;
+    max-width:960px;
     margin-bottom: 15px;
     .bar {
-        width: 377px;
+        flex: 1;
         height: 42px;
         background: #707070;
         display: flex;
@@ -23,19 +24,16 @@ const VideoBarBlock = styled.div`
 
 const GlobalStyle = createGlobalStyle`
   video{
-    width: 1014px;
-    height: 571px;
-    padding: 0 350px;
-    
+    width: 960px;
+    margin-bottom: 20px;
   }
   .Title {
-      padding: 0 606px;
       color: white;
       text-align: right;
-      margin-bottom: 130px;
+      margin-bottom: 100px;
   }
   .Title h1 {
-      margin: 0;
+    font-size: 24px;
   }
   .Title span {
       text-decoration: underline;
@@ -47,6 +45,7 @@ const HomeVideo = () => {
     return (
         <>
             <GlobalStyle />
+
             <VideoBarBlock>
                 <div className="bar">
                     <span>Life</span>
@@ -59,7 +58,7 @@ const HomeVideo = () => {
                 </div>
             </VideoBarBlock>
             <video controls>
-                <source src={videosource}></source>
+                    <source src={videosource}></source>
             </video>
             <div className="Title">
                 <h1>Ep.01 흙수저가 살아남는 생존방식</h1>

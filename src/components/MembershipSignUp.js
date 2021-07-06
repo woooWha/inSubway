@@ -4,39 +4,44 @@ import styled from 'styled-components';
 const SignUpBlock = styled.div`
     width: 360px;
     height: 560px;
-    background: black;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     color: white;
-    margin: -40px auto 0 auto;
-    h1{
-        text-align: center;
-        margin: 0;
+    .text-gray {
+        color: rgba(100,100,100,0.6)
+    }
+    .signUp{
+        text-align:center;
         font-size: 26px;
         margin-bottom: 36px;
     }
     p{
-        font-size: 12px;
+        font-size: 14px;
         font-weight: bold;
+        margin: 8px 0;
     }
     input{
         background: #181816;
         border: none;
         outline: none;
-        padding: 10px;
+        padding: 14px;
         border-radius: 4px;
+        ::placeholder{
+            color: rgba(100,100,100,0.6);
+        }
     }
     input[name=password1]{
         margin-bottom: 8px;
     }
-    input[name=password3]{
-        padding: 0;
-    }
     .checkinput{
         background: #181816;
-        padding: 8px;
+        padding: 14px;
         border-radius: 6px;
         margin-bottom: 32px;
+    }
+    input[name=password3]{
+        padding: 0px;
     }
     select {
         background: transparent;
@@ -68,10 +73,10 @@ const SignUpBlock = styled.div`
 const MembershipSignUp = () => {
     return (
         <SignUpBlock>
-            <h1>SIGN UP</h1>
+            <h1 className='signUp'>SIGN UP</h1>
             <p>이메일 주소 확인</p>
             <input type='text' placeholder='이메일'/>
-            <p>인증이 필요하니 정확한 이메일을 입력해주세요</p>
+            <p className='text-gray'>인증이 필요하니 정확한 이메일을 입력해주세요</p>
             <p>비밀번호(10~16,영어+숫자 조합)*</p>
             <input name='password1' type="password" placeholder='비밀번호' />
             <input type="password" placeholder='비밀번호 확인' />

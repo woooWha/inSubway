@@ -9,13 +9,18 @@ const PurchaseBlock = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 16px;
+    .pur-background {
+        width: 100vh;
+        background: #2F2F2F;
+    }
     .content {
         display: flex;
     }
     h1 {
         color: white;
         font-size: 26px;
-        margin-bottom: 48px;
+        margin: 12px 0 48px 0;
     }
     img {
         width: 304px;
@@ -116,6 +121,7 @@ const PurchaseBlock = styled.div`
 const PaymentPurchase = () => {
     return(
         <PurchaseBlock>
+            <div className='pur-background'></div>
             <h1>Complete Purchase</h1>
             <div className='content'>
                 <div className='left'>

@@ -7,15 +7,17 @@ import { MdExpandMore } from "react-icons/md";
 
 const ListBlock = styled.div`
     padding: 0 30px;
+    margin-bottom: 120px;
     .introduce {
         width: 100%;
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         color: white;
         padding: 0 40px;
         box-sizing: border-box;
         h1 {
             font-size: 24px;
-            margin: 0;
         }
         select {
             width: 120px;
@@ -27,8 +29,6 @@ const ListBlock = styled.div`
             font-size: 18px;
             font-weight: bold;
         }
-        align-items: center;
-        justify-content: space-between;
     }
     .detailmore {
         width: 36px;
@@ -42,8 +42,8 @@ const ListBlock = styled.div`
         font-weight: bold;
         font-size: 36px;
         position: absolute;
-        left: 454px;
-        bottom: 20px;
+        left: 448px;
+        bottom: -40px;
         :hover {
             background: rgba(100,100,100,0.8);
         }

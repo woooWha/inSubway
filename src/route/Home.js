@@ -6,23 +6,26 @@ import { createGlobalStyle } from 'styled-components';
 import HomeFooter from '../components/HomeFooter';
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    min-width: 1210px;
-    position: relative;
+  .homeWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-box-align: center;
+    width: 100%;
+    min-height: 100vh;
     background: black;
-    overflow-y: auto;
   }
   `;
 
 const Home = ({videos}) => {
     return (
-        <>
-            <GlobalStyle />
-            <HomeHeader />
-            <HomeVideo />
-            <HomeVideoList videos={videos}/>
-            <HomeFooter />
-        </>
+            <div className='homeWrap'>
+              <GlobalStyle />
+              <HomeHeader />
+              <HomeVideo />
+              <HomeVideoList videos={videos}/>
+              <HomeFooter />
+            </div>
     )
 }
 

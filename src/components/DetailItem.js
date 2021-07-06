@@ -11,11 +11,10 @@ const ItemBlock = styled.div`
     color: white;
     padding: 30px 40px;
     border-bottom: 1px solid #404040;
-    
+    border-radius: 6px;
     &:hover {
         background: rgba(100,100,100,0.8);
     }
-    border-radius: 6px;
     img {
         width: 128px;
         height: 84px;

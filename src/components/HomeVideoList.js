@@ -4,23 +4,20 @@ import styled from 'styled-components';
 import HomeVideoItem from './HomeVideoItem';
 
 const VideoListBlock = styled.div`
-    padding: 0 490px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 33fr 33fr 33fr;
     margin-bottom: 80px;
 `
 const GlobalStyle = createGlobalStyle`
     .life {
-        padding: 0 540px;
+        width: 630px;
         font-size: 24px;
         font-weight: bold;
         color: white;
         text-decoration: underline;
+        margin-bottom: 60px;
     }
     .more {
-        padding: 0 820px;
         font-size: 16px;
         font-weight: bold;
         color: white;

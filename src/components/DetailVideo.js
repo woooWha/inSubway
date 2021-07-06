@@ -18,7 +18,10 @@ const VideoBlock = styled.div`
     .videoicons {
         display: flex;
         justify-content: space-between;
-        padding: 460px 30px 46px 30px;
+        margin: 460px 0 60px 40px;
+    }
+    .left {
+        display: flex;
     }
     .circle {
         border-radius: 50%;
@@ -34,6 +37,7 @@ const VideoBlock = styled.div`
         margin-right: 8px;
     }
     button {
+        cursor: pointer;
         background: white;
         outline: none;
         border: 0;
@@ -44,9 +48,6 @@ const VideoBlock = styled.div`
         border-radius: 4px;
         margin-right: 16px;
     }
-    .left {
-        display: flex;
-    }
     .homelogo {
         position: absolute;
         top: 0;
@@ -54,6 +55,9 @@ const VideoBlock = styled.div`
         font-size: 24px;
         color: white;
         cursor: pointer;
+    }
+    .right {
+        margin-right: 30px;
     }
 `
 

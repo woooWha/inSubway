@@ -4,8 +4,8 @@ import middleimg2 from '../엘르 코리아 (ELLE KOREA) _ No_1 Fashion Media.jp
 
 const Item2Block = styled.div`
     height: 360px;
-    display: flex;
-    flex-direction: column;
+    background: #2F2F2F;
+    border-radius: 12px;
     img {
         width: 100%;
     }
@@ -17,6 +17,7 @@ const Item2Block = styled.div`
     .two {
         color: white;
         font-weight: bold;
+        margin-bottom: 16px;
     }
     .two span {
         border: 1px solid white;
@@ -24,7 +25,7 @@ const Item2Block = styled.div`
         margin-right: 8px;
     }
     p {
-        color:rgba(100,100,100,0.6)
+        color:rgba(100,100,100,1)
     }
     .itembottom {
         display: flex;
@@ -38,7 +39,7 @@ const DetailItem2 = ({video}) => {
     return (
         <Item2Block>
             <img src = {middleimg2} />
-                <div className='itembottom'>
+            <div className='itembottom'>
                 <span className='one'>{similar}</span>
                 <span className='two'><span>15+</span>{year}</span>
                 <p>{text}</p>

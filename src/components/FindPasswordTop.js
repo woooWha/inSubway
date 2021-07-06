@@ -3,33 +3,32 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const FindTopBlock = styled.div`
-    padding: 60px 300px;
+    width: 100%;
+    max-width: 1210px;
+    margin-top: 60px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     color: white;
-    .gohome{
-        font-size:26px;
-        font-weight: bold;
-        color: white;
+    a {
         text-decoration: none;
     }
-    span {
+    .gohome{
+        font-size:24px;
+        font-weight: bold;
+        color: white;
+    }
+    .signin {
+        color:white;
         font-weight: bold;
     }
-    .signup {
+    .membership {
         margin-left: 15px;
         border: 1px solid skyblue;
         box-sizing: border-box;
-        padding: 2px;
+        padding: 4px 6px;
         border-radius: 4px;
         color: white;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    .signin {
-        text-decoration: none;
-        color:white;
         font-weight: bold;
     }
 `
@@ -40,7 +39,7 @@ const FindTop = () => {
             <Link to='/' className="gohome">지옥철에서</Link>
             <div>
                 <Link to='/login' className='signin'>SIGNIN</Link> 
-                <Link to='/membership' className='signup'>회원가입</Link> 
+                <Link to='/membership' className='membership'>회원가입</Link> 
             </div>
         </FindTopBlock>
     )
