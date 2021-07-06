@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
+
 
 const HeaderBlock = styled.div`
     display: flex;
@@ -12,7 +14,7 @@ const HeaderBlock = styled.div`
         margin-right: 50px;
         color: white;
     }
-    span {
+    a {
         font-size: 16px;
         margin: 0;
         color: white;
@@ -50,7 +52,7 @@ const HomeHeader = () => {
                     <h1>지옥철에서</h1>
                     <input placeholder="🔍  Search Brand and Routine" />
                 </div>
-                <span>SIGN IN</span>
+                <Link to="/login">SIGN IN</Link>
             </HeaderBlock>
             <HeaderSubBlock>
                 <span>LiFE</span>

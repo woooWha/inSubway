@@ -6,8 +6,9 @@ const FooterBlock = styled.div`
     height: 256px;
     color: gray;
     margin-bottom: 20px;
-    margin-top: 100px;
+    margin-top: 60px;
     padding: 0 540px;
+    background: black;
     p {
         font-size: 14px;
     }
@@ -22,7 +23,7 @@ const FooterBlock = styled.div`
     }
     select {
         background: transparent;
-        color: color;
+        color: white;
         outline: none;
         padding: 10px;
         border-radius: 8px;
