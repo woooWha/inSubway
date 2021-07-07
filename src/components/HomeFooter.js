@@ -40,6 +40,9 @@ const FooterBlock = styled.div`
         left:0;
         z-index: -1;
     }
+    option {
+        color: black;
+    }
 `
 
 const HomeFooter = () => {
