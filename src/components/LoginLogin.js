@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import {fetchLogin} from '../service';
+import { setUseProxies } from 'immer';
+
 
 const LoginBlock = styled.div`
     width: 400px;
@@ -70,13 +73,37 @@ const LoginBlock = styled.div`
 `
 
 const LoginLogin = () => {
+
+    const history = useHistory();
+    const[userData,setUserData] = useState(null);
+    const[account, setAccount] = useState({
+        id:"",
+        password:""
+    });
+    const onChangeAccount = (e) => {
+        setAccount({
+            ...account,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const onSubmitAccount = async () => {
+        try {
+            const user = await fetchLogin(account);
+            setUserData(user);
+            history.replace("/");
+        } catch (error) {
+            window.alert('아이디나 비밀번호가 일치하지 않습니다');
+        }
+    };
+
     return (
         <LoginBlock>
             <h1>로그인</h1>
             <form>
-                <input type="text" placeholder='이메일 주소 또는 전화번호'/>
-                <input type="password" placeholder='비밀번호'/>
-                <button>로그인</button>
+                <input id='id' name='id' placeholder='아이디를 입력해주세요' onChange={onChangeAccount} />
+                <input id='password' name='password' type="password" placeholder='비밀번호를 입력해주세요' onChange={onChangeAccount} />
+                <button onClick={onSubmitAccount}>로그인</button>
             </form>
             <div className="help">
                 <div className="left">
