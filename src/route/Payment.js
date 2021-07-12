@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  .paymentWrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    -webkit-box-align: center;
-    width: 100%;
-    min-height: 100vh;
-    background: black;
-  }
-  `;
+    .paymentWrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        -webkit-box-align: center;
+        width: 100%;
+        min-height: 100vh;
+        background: black;
+    }
+`;
 
 const PaymentBlock = styled.div`
     background: black;

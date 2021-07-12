@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import videosource from '../돈 버는 일과 하고 싶은 일 사이, 미대 나온 내가 청소 일을 하는 이유ㅣ 요즘것들의 먹고사니즘 ep.03.mp4'
+import videosource from '../practiceVideo.mp4'
 import {createGlobalStyle} from 'styled-components';
 
 const VideoBarBlock = styled.div`
@@ -8,17 +8,36 @@ const VideoBarBlock = styled.div`
     width:100%;
     max-width:960px;
     margin-bottom: 15px;
-    .bar {
+    .progress {
         flex: 1;
         height: 42px;
         background: #707070;
         display: flex;
-        justify-content: center;
-        align-items: center;
         margin-right: 40px;
+        position: relative;
+        flex-basis: 100%;
     }
-    .bar:nth-child(3){
+    .progress:nth-child(3){
         margin-right: 0;
+    }
+    .progress_filled {
+        background: #ffc600;
+        flex-basis: 0%;
+    }
+    .progress_text {
+        position: absolute;
+        left: 48%;
+        top: 25%;
+    }
+    .progress_text_two {
+        position: absolute;
+        left: 38%;
+        top: 25%;
+    }
+    .progress_text_three {
+        position: absolute;
+        left: 40%;
+        top: 25%;
     }
 `
 
@@ -42,24 +61,46 @@ const GlobalStyle = createGlobalStyle`
   `;
 
 const HomeVideo = () => {
+    const videoRef = useRef(null);
+    const progressRef = useRef(null);
+    const videoCurrentTime = (videoRef && videoRef.current && videoRef.current.currentTime) || 0;
+    const totalTime = (videoRef && videoRef.current && videoRef.current.duration) || 0;
+    const percent = (videoCurrentTime/totalTime)*100;
+
+    /*영상 기능 구현 실패...
+    const timeUpdate = () => progressRef.current.style.flexBasis = 50;
+    
+    const addTimeUpdate = () => {
+        setInterval(()=>{timeUpdate()}, 1000);
+    }
+
+    useEffect(() => {
+        addTimeUpdate();
+    });*/
+
     return (
         <>
             <GlobalStyle />
 
             <VideoBarBlock>
-                <div className="bar">
-                    <span>Life</span>
+                <div className="progress">
+                    <div ref={progressRef} className='progress_filled'></div>
+                    <div className='progress_text'>Life</div>
                 </div>
-                <div className="bar">
-                    <span>BRANDING</span>
+                <div className="progress">
+                    <div className='progress_filled'></div>
+                    <div className='progress_text_two'>BRANDING</div>
                 </div>
-                <div className="bar">
-                    <span>ROUTINE</span>
+                <div className="progress">
+                    <div className='progress_filled'></div>
+                    <div className='progress_text_three'>ROUTINE</div>
                 </div>
             </VideoBarBlock>
-            <video controls>
-                    <source src={videosource}></source>
+
+            <video ref={videoRef} controls={false} autoPlay muted loop width='100%' height='100%'>
+                <source src={videosource}></source>
             </video>
+
             <div className="Title">
                 <h1>Ep.01 흙수저가 살아남는 생존방식</h1>
                 <span>view More</span>

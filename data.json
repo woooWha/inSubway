@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": "sungun",
+      "password": "1234",
+      "name": "성우니"
+    },
+    {
+      "id": "leeun",
+      "password": "4321",
+      "name": "니우성"
+    }
+  ]
+}
