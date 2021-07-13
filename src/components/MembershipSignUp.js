@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import {fetchSignup} from '../signup'
 
 const SignUpBlock = styled.div`
     width: 360px;
@@ -72,170 +73,51 @@ const SignUpBlock = styled.div`
 `
 
 const MembershipSignUp = () => {
-const history = useHistory();
-const[email,setEmail] = useState('');
-const[nickname,setNickname] = useState('');
-const[pw,setPw] = useState('');
-const[re_pw,setRe_pw] = useState('');
-const[emailCheck,setEmailCheck] = useState('');
-const[nicknameCheck,setNicknameCheck] = useState("");
-const[pwCheck,setPwCheck] =useState("");
+    const history = useHistory();
+    const[accountTwo,setAccountTwo] = useState({
+        email: "",
+        password: "",
+        passwordTwo: "",
+        nickname: "",
+        phoneNumber: ""
+    })
 
-    const handleEmail = (e) => {
-        e.preventDefault();
-        setEmail(e.target.value);
-    }
-
-    const checkEmail = e => {
-        e.preventDefault();
-        const chkEmail = function(str){
-            var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-            return regExp.test(str) ? true : false;
-        };
-
-        const inputEmail = {
-            email: email
-        };
-        const email_info = {
-            method: "POST",
-            body: JSON.stringify(inputEmail),
-            headers: {
-                "content-Type": "application/json"
-            }
-        };
-        if(chkEmail(email) === false) {
-            alert("이메일 형식이 유효하지 않습니다.");
-            setEmail({email:""});
-        } else {
-            fetch("http://localhost:4000/users", email_info)
-            .then(res => res.json())
-            .then(json => {
-                if(json === true){
-                    alert("사용가능 한 아이디입니다");
-                    setEmailCheck(email);
-                } else {
-                    alert("이미 존재하는 아이디입니다");
-                }
-            })
-        }
-    }
-
-
-    const handleNickname = e => {
-        e.preventDefault();
-        setNickname(e.target.value);
+    const onChangeAccount = (e) => {
+        setAccountTwo({
+            ...accountTwo,
+            [e.target.name]: e.target.value
+        });
     };
-    //닉네임 중복검사
-    const checkNickname = e => {
-        e.preventDefault();
-        const chkNickname = function(str) {
-        var regNm = /^[가-힣]{2,15}|[a-zA-Z]{2,15}\s[a-zA-Z]{2,15}$/;
-        return regNm.test(str) ? true : false;
-        };
-        const inputNickname = {
-        nickname: nickname
-        };
-        const nickname_info = {
+
+    const accountTwo_info = {
         method: "POST",
-        body: JSON.stringify(inputNickname),
+        body: JSON.stringify(accountTwo),
         headers: {
-            "Content-Type": "application/json"
-        }
-        };
-        if (chkNickname(nickname) === false) {
-        alert("한글,영문 대소문자 2~15자리만 사용 가능합니다");
-        } else {
-        fetch("http://localhost:9089/user/nick", nickname_info)
-            .then(res => res.json())
-            .then(json => {
-            if (json === true) {
-                alert("사용 가능한 닉네임입니다.");
-                setNickname(nickname);
-            } else {
-                alert("이미 존재하는 닉네임입니다.");
-            }
-            });
+            "Content-Type":"application/json"
         }
     };
 
-
-    const handlePw = e => {
-        e.preventDefault();
-        setPw(e.target.value)
-    };
-    const handleRe_pw = e => {
-        e.preventDefault();
-        setRe_pw(e.target.value)
-    };
-
-    const checkPw = e => {
-        e.preventDefault();
-        const chkPwd = function(str){
-            var reg_pwd = /^.*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;
-            return !reg_pwd.test(str) ? false: true;
-        };
-        if(chkPwd(re_pw)===false){
-            alert("영문,숫자를 혼합하여 06~20자 이내");
-            setPw("");
-            setRe_pw("");
-        } else {
-            if(pw===re_pw){
-                alert("일치합니다.");
-                setPwCheck(re_pw);
-            } else {
-                alert("비밀번호가 불일치합니다.")
-            }
-        };
-    }
-
-    const handleSubmit = e => {
-        e.preventDefault();
-        checkEmail(e);
-        checkNickname(e);
-        checkPw(e);
-        const signupInfo = {
-            email: emailCheck,
-            pw: pwCheck,
-            nickname: nicknameCheck
-        };
-        const signup_info = {
-            method: "post",
-            body: JSON.stringify(signupInfo),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        };
-        if(
-            email &&
-            nickname &&
-            pw &&
-            re_pw &&
-            email === emailCheck &&
-            nickname === nicknameCheck &&
-            pw === re_pw &&
-            re_pw === pwCheck
-        ) {
-            fetch("http://localhost:4000/users", signup_info)
-                .then(alert("가입이 완료되었습니다"))
-                .then(history.push("./login"));
-        } else {
-            alert("입력값을 확인해주세요");
+    const onSubmitAccount = async() => {
+        try {
+            await fetchSignup(accountTwo);
+            fetch("http://localhost:4001/users", accountTwo_info)
+            .then(history.replace('./login'))
+        } catch (error) {
+            window.alert('회원가입에 실패했습니다.')
         }
     };
-
-
 
     return (
         <SignUpBlock>
             <h1 className='signUp'>SIGN UP</h1>
             <p>이메일 주소 확인</p>
-            <input type='text' onChange={handleEmail} value={email} placeholder='이메일'/>
+            <input id="email" name='email' onChange={onChangeAccount} type='text' placeholder='이메일'/>
             <p className='text-gray'>인증이 필요하니 정확한 이메일을 입력해주세요</p>
             <p>비밀번호(10~16,영어+숫자 조합)*</p>
-            <input name='password1' type="password" placeholder='비밀번호' />
-            <input type="password" placeholder='비밀번호 확인' />
+            <input id="password" name='password' onChange={onChangeAccount} type="password" placeholder='비밀번호' />
+            <input id="passwordTwo" name='passwordTwo' onChange={onChangeAccount} type="password" placeholder='비밀번호 확인' />
             <p>닉네임(12자 이하)*</p>
-            <input type="text" onChange={handleNickname} value={nickname} placeholder='닉네임(12자 이하)*' />
+            <input id="nickname" name='nickname' onChange={onChangeAccount} type="text" placeholder='닉네임(12자 이하)*' />
             <p>휴대전화번호(숫자만)</p>
             <div className='checkinput'>
                 <select>
@@ -243,7 +125,7 @@ const[pwCheck,setPwCheck] =useState("");
                     <option value='2'>+92</option>
                     <option value='3'>+102</option>
                 </select>
-                <input name='password3' type='password' placeholder='숫자만' />
+                <input id="phoneNumber" name='phoneNumber' onChange={onChangeAccount} type='password' placeholder='숫자만' />
             </div>
             <div className='topBox'>
                 <input type='checkbox' />
@@ -263,7 +145,7 @@ const[pwCheck,setPwCheck] =useState("");
                     <span>전체 이용약관에 동의<spam className='must'>(필수)</spam></span>
                 </div>
             </div>
-            <button onClick={handleSubmit}>입력완료</button>
+            <button onClick={onSubmitAccount}>입력완료</button>
         </SignUpBlock>
     )
 }
