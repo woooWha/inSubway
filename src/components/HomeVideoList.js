@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 16px;
         font-weight: bold;
         color: white;
+        cursor: pointer;
     }
 `
 

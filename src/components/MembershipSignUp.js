@@ -51,6 +51,10 @@ const SignUpBlock = styled.div`
         border:none;
         outline: none;
         margin-right: 20px;
+        option {
+            color: white;
+            background: black;
+        }
     }
     .topBox{
         margin-bottom: 24px;
@@ -121,7 +125,7 @@ const MembershipSignUp = () => {
             <p>휴대전화번호(숫자만)</p>
             <div className='checkinput'>
                 <select>
-                    <option value='1'>+82</option>
+                    <option value='1' selected>+82</option>
                     <option value='2'>+92</option>
                     <option value='3'>+102</option>
                 </select>

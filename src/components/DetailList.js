@@ -13,18 +13,21 @@ const ListBlock = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: white;
         padding: 0 40px;
         box-sizing: border-box;
+        option {
+            background: black;
+            color: white;
+            }
         h1 {
             font-size: 24px;
         }
         select {
             width: 120px;
             background: rgba(100,100,100,0.2);
-            color: white;
             padding: 8px 12px;
             outline: none;
+            color: white;
             border-radius: 4px;
             font-size: 18px;
             font-weight: bold;
@@ -57,7 +60,7 @@ const DetailList = ({videos}) => {
                 <div className="introduce">
                     <h1>회차</h1>
                     <select name='drama'>
-                        <option value='1'>보이스</option>
+                        <option className="option" value='1' selected>보이스</option>
                         <option value='2'>하트시그널</option>
                         <option value='3'>헬로우마마보이</option>
                         <option value='4'>라일락</option>

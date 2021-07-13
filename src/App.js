@@ -10,7 +10,7 @@ import {HashRouter, Route} from 'react-router-dom';
 
 function App() {
 
-  const[videos,setvideos] = useState([
+  const[videos,setVideos] = useState([
     {
     id: 1,
     img: 'qwwq.mp4',
@@ -100,13 +100,12 @@ function App() {
     level:'쉬움',
     year: 2021,
     similar:'95%일치'
-  },
+  }
   ])
-
 
   return (
     <HashRouter>
-      <Route path='/' exact={true} render={()=> <Home videos={videos} />} />
+      <Route path='/' exact={true} render={()=> <Home videos={videos}/>} />
       <Route path='/login' render={()=> <Login />} />
       <Route path='/membership' render={()=> <Membership />} />
       <Route path='/findpassword' render={()=> <FindPassword />} />

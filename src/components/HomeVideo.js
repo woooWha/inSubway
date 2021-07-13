@@ -46,17 +46,18 @@ const GlobalStyle = createGlobalStyle`
     width: 960px;
     margin-bottom: 20px;
   }
-  .Title {
+  .title {
       color: white;
       text-align: right;
       margin-bottom: 100px;
   }
-  .Title h1 {
+  .title h1 {
     font-size: 24px;
   }
-  .Title span {
+  .title span {
       text-decoration: underline;
       font-weight: bold;
+      cursor: pointer;
   }
   `;
 
@@ -101,7 +102,7 @@ const HomeVideo = () => {
                 <source src={videosource}></source>
             </video>
 
-            <div className="Title">
+            <div className="title">
                 <h1>Ep.01 흙수저가 살아남는 생존방식</h1>
                 <span>view More</span>
             </div>

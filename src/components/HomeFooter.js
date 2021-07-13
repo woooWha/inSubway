@@ -11,6 +11,9 @@ const FooterBlock = styled.div`
     margin-bottom: 20px;
     margin-top: 60px;
     background: black;
+    .middle div {
+        cursor: pointer;
+    }
     p {
         font-size: 14px;
         margin-bottom: 24px;
@@ -41,7 +44,8 @@ const FooterBlock = styled.div`
         z-index: -1;
     }
     option {
-        color: black;
+        background: black;
+        color: white;
     }
 `
 
@@ -69,10 +73,10 @@ const HomeFooter = () => {
                 <div>넷플릭스 오리지날</div>
             </div>
             <select name='language' form='myform'>
-                <option value='1'>한국어</option>
-                <option value='2' selected>영어</option>
+                <option value='1' selected>한국어</option>
+                <option value='2'>영어</option>
                 <option value='3'>중국어</option>
-                <option value='4' selected>일본어</option>
+                <option value='4'>일본어</option>
             </select>
         </FooterBlock>
     )
