@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link, useHistory } from 'react-router-dom';
-import {fetchLogin} from '../service';
+import {fetchLogin} from '../service'
 import { setUseProxies } from 'immer';
 
 
@@ -77,7 +77,7 @@ const LoginLogin = () => {
     const history = useHistory();
     const[userData,setUserData] = useState(null);
     const[account, setAccount] = useState({
-        id:"",
+        email:"",
         password:""
     });
     const onChangeAccount = (e) => {
@@ -101,7 +101,7 @@ const LoginLogin = () => {
         <LoginBlock>
             <h1>로그인</h1>
             <form>
-                <input id='id' name='id' placeholder='아이디를 입력해주세요' onChange={onChangeAccount} />
+                <input id='email' name='email' placeholder='이메일을 입력해주세요' onChange={onChangeAccount} />
                 <input id='password' name='password' type="password" placeholder='비밀번호를 입력해주세요' onChange={onChangeAccount} />
                 <button onClick={onSubmitAccount}>로그인</button>
             </form>
@@ -132,3 +132,13 @@ const LoginLogin = () => {
 }
 
 export default LoginLogin
+
+/*
+const onSubmit= (e) => {
+    e.
+    
+    Default();
+    if(checkEmail(email)) find 쓰기;
+    
+}
+*/
