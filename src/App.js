@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
-import Home from './route/Home';
-import Login from './route/Login';
-import Membership from './route/Membership';
-import FindPassword from './route/FindPassword';
-import Detail from './route/Detail';
-import Payment from './route/Payment';
-import {HashRouter, Route} from 'react-router-dom';
+import Home from './pageRoute/Home';
+import Login from './pageRoute/Login';
+import Membership from './pageRoute/Membership';
+import FindPassword from './pageRoute/FindPassword';
+import Detail from './pageRoute/Detail';
+import Payment from './pageRoute/Payment';
+import {BrowserRouter, HashRouter, Route} from 'react-router-dom';
 
 function App() {
 
@@ -104,14 +104,14 @@ function App() {
   ])
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Route path='/' exact={true} render={()=> <Home videos={videos}/>} />
       <Route path='/login' render={()=> <Login />} />
       <Route path='/membership' render={()=> <Membership />} />
       <Route path='/findpassword' render={()=> <FindPassword />} />
       <Route path='/detail' render={()=> <Detail videos={videos}/>} />
       <Route path='/payment' render={()=> <Payment />} />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
