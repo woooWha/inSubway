@@ -21,20 +21,31 @@ export const VideoBarBlock = styled.div`
         background: #ffc600;
         flex-basis: 0%;
     }
+    .progress_filled_two {
+        background: #ffc600;
+        flex-basis: 0%;
+    }
+    .progress_filled_three {
+        background: #ffc600;
+        flex-basis: 0%;
+    }
     .progress_text {
         position: absolute;
         left: 48%;
         top: 25%;
+        cursor: pointer;
     }
     .progress_text_two {
         position: absolute;
         left: 38%;
         top: 25%;
+        cursor: pointer;
     }
     .progress_text_three {
         position: absolute;
         left: 40%;
         top: 25%;
+        cursor: pointer;
     }
 `
 
