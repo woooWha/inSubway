@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import videosource from '../../imgVideoSource/practiceVideo.mp4'
+import videosourceTwo from '../../imgVideoSource/practiceVideoTwo.mp4'
+import videosourceThree from '../../imgVideoSource/practiceVideoThree.mp4'
 import {createGlobalStyle} from 'styled-components';
 import {VideoBarBlock, GlobalStyle} from './style';
 
@@ -8,20 +10,98 @@ import {VideoBarBlock, GlobalStyle} from './style';
 const HomeVideo = () => {
     const videoRef = useRef(null);
     const progressRef = useRef(null);
-    const videoCurrentTime = (videoRef && videoRef.current && videoRef.current.currentTime) || 0;
-    const totalTime = (videoRef && videoRef.current && videoRef.current.duration) || 0;
-    const percent = (videoCurrentTime/totalTime)*100;
+    const progressRefTwo = useRef(null);
+    const progressRefThree = useRef(null);
+    const srcRef = useRef(null);
 
-    /*영상 기능 구현 실패...
-    const timeUpdate = () => progressRef.current.style.flexBasis = 50;
-    
-    const addTimeUpdate = () => {
-        setInterval(()=>{timeUpdate()}, 1000);
+
+
+    const[src,setSrc] = useState(videosource);
+    let timer;
+    let timerTwo;
+    let timerThree;
+
+    const timeUpdate = () => {
+        const videoCurrentTime = Math.round((videoRef && videoRef.current && videoRef.current.currentTime)) || 0;
+        const totalTime = Math.floor((videoRef && videoRef.current && videoRef.current.duration)) || 0;
+        const percent = (videoCurrentTime/totalTime)*100;
+        progressRef.current.style.flexBasis = `${percent}%`;
+        if(videoCurrentTime===totalTime){
+            clearInterval(timer);
+            setSrc(videosourceTwo);
+            videoRef.current.load();
+        }
     }
 
-    useEffect(() => {
+    const timeUpdateTwo = () => {
+        const videoCurrentTime = Math.round((videoRef && videoRef.current && videoRef.current.currentTime)) || 0;
+        const totalTime = Math.floor((videoRef && videoRef.current && videoRef.current.duration)) || 0;
+        const percent = (videoCurrentTime/totalTime)*100;
+        progressRefTwo.current.style.flexBasis = `${percent}%`;
+        if(videoCurrentTime===totalTime){
+            clearInterval(timerTwo);
+            setSrc(videosourceThree);
+            videoRef.current.load();
+        }
+    }
+
+    const timeUpdateThree = () => {
+        const videoCurrentTime = Math.round((videoRef && videoRef.current && videoRef.current.currentTime)) || 0;
+        const totalTime = Math.floor((videoRef && videoRef.current && videoRef.current.duration)) || 0;
+        const percent = (videoCurrentTime/totalTime)*100;
+        progressRefThree.current.style.flexBasis = `${percent}%`;
+        if(videoCurrentTime===totalTime){
+            clearInterval(timerThree);
+            setSrc(videosource);
+            videoRef.current.load();
+            progressRef.current.style.flexBasis = 0;
+            progressRefTwo.current.style.flexBasis = 0;
+            progressRefThree.current.style.flexBasis = 0;
+        }
+    }
+
+    const clickUpdate = () => {
+        progressRef.current.style.flexBasis = 0;
+        progressRefTwo.current.style.flexBasis = 0;
+        progressRefThree.current.style.flexBasis = 0;
+        clearInterval(timerTwo);
+        clearInterval(timerThree);
+        setSrc(videosource);
+        videoRef.current.load();
+    }
+
+    const clickUpdateTwo = () => {
+        progressRef.current.style.flexBasis = (100+"%");
+        progressRefTwo.current.style.flexBasis = 0;
+        progressRefThree.current.style.flexBasis = 0;
+        clearInterval(timer);
+        clearInterval(timerThree);
+        setSrc(videosourceTwo);
+        videoRef.current.load();
+    }
+
+    
+    const clickUpdateThree = () => {
+        progressRef.current.style.flexBasis = (100+"%");
+        progressRefTwo.current.style.flexBasis = (100+"%");
+        progressRefThree.current.style.flexBasis = 0;
+        clearInterval(timer);
+        clearInterval(timerTwo);
+        setSrc(videosourceThree);
+        videoRef.current.load();
+    }
+
+    const addTimeUpdate = () => {if(src === videosource){
+        timer = setInterval(()=>timeUpdate(), 1000)} else if(src ===videosourceTwo){
+            timerTwo = setInterval(() => timeUpdateTwo(), 1000)} else {
+                timerThree = setInterval(() => timeUpdateThree(), 1000)
+            }
+    }
+
+
+    useEffect(()=> {
         addTimeUpdate();
-    });*/
+    })
 
     return (
         <>
@@ -29,20 +109,20 @@ const HomeVideo = () => {
             <VideoBarBlock>
                 <div className="progress">
                     <div ref={progressRef} className='progress_filled'></div>
-                    <div className='progress_text'>Life</div>
+                    <div className='progress_text' onClick={clickUpdate}>Life</div>
                 </div>
                 <div className="progress">
-                    <div className='progress_filled'></div>
-                    <div className='progress_text_two'>BRANDING</div>
+                    <div ref={progressRefTwo} className='progress_filled_two'></div>
+                    <div className='progress_text_two' onClick={clickUpdateTwo}>BRANDING</div>
                 </div>
                 <div className="progress">
-                    <div className='progress_filled'></div>
-                    <div className='progress_text_three'>ROUTINE</div>
+                    <div ref={progressRefThree} className='progress_filled_three'></div>
+                    <div className='progress_text_three' onClick={clickUpdateThree}>ROUTINE</div>
                 </div>
             </VideoBarBlock>
 
             <video ref={videoRef} controls={false} autoPlay muted loop width='100%' height='100%'>
-                <source src={videosource}></source>
+                <source key='1' ref={srcRef} src={src}></source>
             </video>
 
             <div className="title">
