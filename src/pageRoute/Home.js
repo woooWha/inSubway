@@ -17,13 +17,13 @@ const GlobalStyle = createGlobalStyle`
   }
   `;
 
-const Home = ({videos}) => {
+const Home = ({videos, setVideos, addVideos}) => {
     return (
             <div className='homeWrap'>
               <GlobalStyle />
               <HomeHeader />
               <HomeVideo />
-              <HomeVideoList videos={videos}/>
+              <HomeVideoList videos={videos} setVideos={setVideos} addVideos={addVideos}/>
               <HomeFooter />
             </div>
     )

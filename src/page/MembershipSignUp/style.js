@@ -69,5 +69,9 @@ export const SignUpBlock = styled.div`
         background: #FFFFFF;
         font-weight: bold;
         border-radius: 8px;
+        cursor: pointer;
+    }
+    #password {
+        margin-bottom: 6px;
     }
 `

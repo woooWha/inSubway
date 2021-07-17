@@ -28,5 +28,6 @@ export const FindMiddleBlock = styled.div`
         border: 1px solid skyblue;
         border-radius: 6px;
         font-weight: bold;
+        cursor:pointer;
     }
 `

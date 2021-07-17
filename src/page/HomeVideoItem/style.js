@@ -2,18 +2,40 @@ import styled from "styled-components"
 
 export const VideoItemBlock = styled.div`
     width:200px;
-    height: 223px;
+    height: 240px;
     color:black;
-    background: gray;
+    background: black;
     margin: 0 10px 10px 0;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
     position: relative;
+    transition: 0.1s all 1s ease-in;
+    z-index:0;
+    .textboxHideText{
+        opacity: 0;
+        transition: 0.1s all 1s ease-in;
+        font-size: 8px;
+    }
+    .textbox-bottom{
+        opacity: 0;
+        transition: 0.1s all 1s ease-in;
+    }
+    :hover{
+        background: gray;
+        transform:scale(1.3);
+        z-index: 999;
+        .textboxHideText{
+            opacity: 1;
+        }
+        .textbox-bottom{
+            opacity: 1;
+        }
+    }
     img {
         width: 100%;
         height: 120px;
     }
-    .title {
+    .textboxTitle {
         font-size: 14px;
         font-weight: bold;
     }

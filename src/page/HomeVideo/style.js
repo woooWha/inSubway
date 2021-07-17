@@ -20,14 +20,17 @@ export const VideoBarBlock = styled.div`
     .progress_filled {
         background: #ffc600;
         flex-basis: 0%;
+        transition: 1s all linear;
     }
     .progress_filled_two {
         background: #ffc600;
         flex-basis: 0%;
+        transition: 1s all linear;
     }
     .progress_filled_three {
         background: #ffc600;
         flex-basis: 0%;
+        transition: 1s all linear;
     }
     .progress_text {
         position: absolute;
