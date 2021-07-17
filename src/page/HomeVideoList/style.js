@@ -4,6 +4,7 @@ export const VideoListBlock = styled.div`
     display: grid;
     grid-template-columns: 33fr 33fr 33fr;
     margin-bottom: 80px;
+    transition: 1s all ease-in;
 `
 export const GlobalStyle = createGlobalStyle`
     .life {

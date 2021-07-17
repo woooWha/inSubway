@@ -7,6 +7,15 @@ import {createGlobalStyle} from 'styled-components';
 import {VideoBarBlock, GlobalStyle} from './style';
 
 
+export const clear = () => {
+    clearInterval(timer);
+    clearInterval(timerTwo);
+    clearInterval(timerThree);
+}
+
+let timer;
+let timerTwo;
+let timerThree;
 const HomeVideo = () => {
     const videoRef = useRef(null);
     const progressRef = useRef(null);
@@ -14,12 +23,9 @@ const HomeVideo = () => {
     const progressRefThree = useRef(null);
     const srcRef = useRef(null);
 
-
-
+    
     const[src,setSrc] = useState(videosource);
-    let timer;
-    let timerTwo;
-    let timerThree;
+
 
     const timeUpdate = () => {
         const videoCurrentTime = Math.round((videoRef && videoRef.current && videoRef.current.currentTime)) || 0;
@@ -59,6 +65,11 @@ const HomeVideo = () => {
             progressRefThree.current.style.flexBasis = 0;
         }
     }
+    const clearAllTimer = () => {
+        clearInterval(timer);
+        clearInterval(timerTwo);
+        clearInterval(timerThree);
+    }
 
     const clickUpdate = () => {
         progressRef.current.style.flexBasis = 0;
@@ -92,15 +103,18 @@ const HomeVideo = () => {
     }
 
     const addTimeUpdate = () => {if(src === videosource){
+        //timeUpdate()
         timer = setInterval(()=>timeUpdate(), 1000)} else if(src ===videosourceTwo){
+            //timeUpdateTwo()
             timerTwo = setInterval(() => timeUpdateTwo(), 1000)} else {
+                //timeUpdateThree()
                 timerThree = setInterval(() => timeUpdateThree(), 1000)
             }
     }
 
-
     useEffect(()=> {
         addTimeUpdate();
+        clearAllTimer();
     })
 
     return (

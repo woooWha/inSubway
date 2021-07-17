@@ -1,11 +1,20 @@
 {
   "users": [
     {
-      "email":"gilga4@naver.com",
-      "password":"asdf1234",
-      "passwordTwo":"asdf1234",
-      "nickname":"안녕아",
-      "phoneNumber":"010-6828-2338"
+      "id": 1,
+      "email": "gilga4@naver.com",
+      "password": "asdf1234",
+      "passwordTwo": "asdf1234",
+      "nickname": "안녕아",
+      "phoneNumber": "010-6828-2338"
+    },
+    {
+      "id": 2,
+      "email": "pm5555pm@naver.com",
+      "password": "asd789456123",
+      "passwordTwo": "asd789456123",
+      "nickname": "아리수야",
+      "phoneNumber": "010-6878-4545"
     }
   ]
 }

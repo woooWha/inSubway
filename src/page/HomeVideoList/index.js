@@ -6,7 +6,13 @@ import {VideoListBlock, GlobalStyle} from './style';
 
 
 
-const HomeVideoList = ({videos}) => {
+const HomeVideoList = ({videos,setVideos,addVideos}) => {
+
+    const addVideo = () => {
+        if(videos.length<10){
+        setVideos(videos => [...videos, ...addVideos])}
+    }
+
     return (
     <>  
         <GlobalStyle />
@@ -15,7 +21,7 @@ const HomeVideoList = ({videos}) => {
             {videos.map(video => 
                 <HomeVideoItem key={video.id} video={video} />)}
         </VideoListBlock>
-        <span className="more">⬇more</span>
+        <span className="more" onClick={addVideo}>⬇more</span>
     </>
     )
 }

@@ -12,6 +12,7 @@ const LoginLogin = () => {
     const history = useHistory();
     const[userData,setUserData] = useState(null);
     const[account, setAccount] = useState({
+        id:"",
         email:"",
         password:""
     });
@@ -22,13 +23,14 @@ const LoginLogin = () => {
         });
     };
 
-    const onSubmitAccount = async () => {
+    const onSubmitAccount = async (e) => {
         try {
+            e.preventDefault();
             const user = await fetchLogin(account);
+            if(user){
             setUserData(user);
-            history.replace("/");
+            history.replace("/");}
         } catch (error) {
-            window.alert('아이디나 비밀번호가 일치하지 않습니다');
         }
     };
 

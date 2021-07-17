@@ -14,9 +14,9 @@ const FindMiddle = () => {
     }
     const findPassword = async () => {
         try {
-            await fetchFindPassword(email)
+            await fetchFindPassword(email);
+            history.replace("/");
         } catch (error) {
-            window.alert('서버 통신이 원할하지 않습니다');
         }
     };
 
