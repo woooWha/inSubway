@@ -113,8 +113,8 @@ const HomeVideo = () => {
     }
 
     useEffect(()=> {
-        addTimeUpdate();
         clearAllTimer();
+        addTimeUpdate();
     })
 
     return (

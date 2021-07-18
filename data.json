@@ -15,6 +15,14 @@
       "passwordTwo": "asd789456123",
       "nickname": "아리수야",
       "phoneNumber": "010-6878-4545"
+    },
+    {
+      "id": 3,
+      "email": "gilg@naver.co0",
+      "password": "asd456123789",
+      "passwordTwo": "asd456123789",
+      "nickname": "유야호랑이",
+      "phoneNumber": "010-7878-456456"
     }
   ]
 }

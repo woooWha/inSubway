@@ -15,7 +15,7 @@ const DetailList2 = ({videos}) => {
 
         <List2Block>
             {videos.map(video => 
-                <DetailItem2 video={video}/>)}
+                <DetailItem2 key={video.id} video={video}/>)}
         </List2Block>
         
         <div className="detailmore-two">

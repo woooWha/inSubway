@@ -156,7 +156,7 @@ function App() {
       <Route path='/login' render={()=> <Login />} />
       <Route path='/membership' render={()=> <Membership />} />
       <Route path='/findpassword' render={()=> <FindPassword />} />
-      <Route path='/detail' render={()=> <Detail videos={videos}/>} />
+      <Route path='/detail' render={()=> <Detail videos={videos} addVideos={addVideos} />} />
       <Route path='/payment' render={()=> <Payment />} />
     </BrowserRouter>
   );

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const VideoBlock = styled.div`
-img {
+video {
     position: absolute;
     top: 0;
     width: 100%;
@@ -10,7 +10,7 @@ img {
 .videoicons {
     display: flex;
     justify-content: space-between;
-    margin: 460px 0 60px 40px;
+    margin: 460px 0 15px 40px;
 }
 .left {
     display: flex;

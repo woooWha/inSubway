@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import middleimg from '../../imgVideoSource/엘르 코리아 (ELLE KOREA) _ No_1 Fashion Media.jpg'
 import { createGlobalStyle } from 'styled-components';
@@ -11,7 +11,9 @@ import {ItemBlock} from './style';
 
 
 const DetailItem = ({video}) => {
-    const{id, title, text,time} = video
+
+    const{id, title, text,time,img} = video;
+
     return(
     <>
         <Link to ='/payment' className='paymentlink'>
@@ -20,7 +22,7 @@ const DetailItem = ({video}) => {
                     <span>{id}</span>
                 </div>
                 <div className="middle">
-                    <img src={middleimg} />
+                    <img src={img} />
                 </div>
                 <div className='right'>
                     <div className='right-top'>
