@@ -68,7 +68,7 @@ const DetailLayout = styled.div`
     z-index:999;
 `
 
-const Detail = ({videos,addVideos}) => {
+const Detail = ({videos,videoListTwo, videoListOne}) => {
 
     return (
         <div className='detailWrap'>
@@ -78,7 +78,7 @@ const Detail = ({videos,addVideos}) => {
             <DetailLayout>
                 <DetailVideo />
                 <DetailText />
-                <DetailList videos={videos} addVideos={addVideos}/>
+                <DetailList videos={videos} videoListTwo={videoListTwo} videoListOne={videoListOne}/>
                 <DetailList2 videos={videos}/>
                 <DetailFooter />
             </DetailLayout>

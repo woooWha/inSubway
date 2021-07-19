@@ -48,6 +48,7 @@ export const HeaderSubBlock = styled.div`
     span {
         margin-right: 65px;
         font-size: 16px;
+        cursor: pointer;
     }
     span:nth-child(3){
         margin-right: 0;

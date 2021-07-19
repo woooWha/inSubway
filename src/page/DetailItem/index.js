@@ -4,6 +4,8 @@ import middleimg from '../../imgVideoSource/엘르 코리아 (ELLE KOREA) _ No_1
 import { createGlobalStyle } from 'styled-components';
 import { Link } from 'react-router-dom';
 import {ItemBlock} from './style';
+import {clear} from '../HomeVideo/index'
+import {MdPlayCircleFilled} from "react-icons/md";
 
 
 
@@ -17,12 +19,15 @@ const DetailItem = ({video}) => {
     return(
     <>
         <Link to ='/payment' className='paymentlink'>
-            <ItemBlock>
+            <ItemBlock onClick={clear}>
                 <div className="left">
                     <span>{id}</span>
                 </div>
                 <div className="middle">
-                    <img src={img} />
+                    <img src={img}></img>
+                    <div className="play">
+                        <MdPlayCircleFilled className="playIcon"/>
+                    </div>
                 </div>
                 <div className='right'>
                     <div className='right-top'>

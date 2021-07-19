@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const ListBlock = styled.div`
     padding: 0 30px;
     margin-bottom: 120px;
+    position: relative;
     .introduce {
         width: 100%;
         display: flex;
@@ -41,7 +42,7 @@ export const ListBlock = styled.div`
         font-size: 36px;
         position: absolute;
         left: 448px;
-        bottom: -40px;
+        bottom: -20px;
         :hover {
             background: rgba(100,100,100,0.8);
         }

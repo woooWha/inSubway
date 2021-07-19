@@ -9,18 +9,17 @@ const DetailList2 = ({videos}) => {
     return (
     <>
         <GlobalStyle />
-        <div className='list-two-title'>
+        <div className='listTwoTitle'>
         비슷한 콘텐츠
         </div>
 
         <List2Block>
             {videos.map(video => 
                 <DetailItem2 key={video.id} video={video}/>)}
+            <div className="detailmoreTwo">
+                <MdExpandMore />
+            </div>
         </List2Block>
-        
-        <div className="detailmore-two">
-                    <MdExpandMore />
-        </div>
     </>
     )
 }

@@ -86,6 +86,7 @@ export const PurchaseBlock = styled.div`
         box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         background: #F3F4F6;
         margin-bottom: 48px;
+        cursor: pointer;
     }
     .line {
         border-bottom: 1px solid black;
@@ -113,5 +114,6 @@ export const PurchaseBlock = styled.div`
         border: 0;
         bottom: -48px;
         right: 0px;
+        cursor: pointer;
     }
 `

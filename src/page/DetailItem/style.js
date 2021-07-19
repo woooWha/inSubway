@@ -10,8 +10,8 @@ export const ItemBlock = styled.div`
         background: rgba(100,100,100,0.8);
     }
     img {
-        width: 128px;
-        height: 84px;
+        width: 148px;
+        height: 104px;
         border-radius: 6px;
         margin-right: 12px;
     }
@@ -32,5 +32,28 @@ export const ItemBlock = styled.div`
         justify-content: space-between;
         font-weight: bold;
         margin-bottom: 8px;
+    }
+    .play {
+        font-size: 34px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 40px;
+        left: 60px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+        svg {color: blue;}
+        :hover {
+            svg { color: yellow;}
+        }
+    }
+    .middle {
+        position: relative;
+        :hover {
+            .play {
+                opacity: 1;
+            }
+        }
     }
 `

@@ -6,12 +6,12 @@ import { MdExpandMore } from "react-icons/md";
 import {ListBlock} from './style';
 
 
-const DetailList = ({videos,addVideos,addTwoVideos,addThreeVideos}) => {
-    const[detailVideoList,setDetailVideoList] = useState(videos)
+const DetailList = ({videoListOne,videoListTwo}) => {
+    const[detailVideoList,setDetailVideoList] = useState(videoListOne)
 
-    /* 1.하트시그널을 클릭하면 setDetatilVideoList(addVideos)가 적용되고,
+    /* 1.하트시그널을 클릭하면 setDetatilVideoList(videoListTwo)가 적용되고,
        2.헬로우마마보이를 클릭하면 setDetatilVideoList(addTwoVideos)가 적용되고,
-       3. 라일락을 클릭하면 setDetailVideoList(addThreeVideos)가 적용된다. */
+       3. 라일락을 클릭하면 setDetailVideoList(videoListOne)가 적용된다. */
 
     return (
     <>
@@ -20,17 +20,15 @@ const DetailList = ({videos,addVideos,addTwoVideos,addThreeVideos}) => {
                     <h1>회차</h1>
                     <select onChange={(e) => {
                         const selectedVideo = e.target.value;
-                        if(selectedVideo === "videos"){
-                        setDetailVideoList((videos))} else if (selectedVideo === "addVideos"){
-                            setDetailVideoList(addVideos)} else if (selectedVideo === "addTwoVideos"){
-                                setDetailVideoList(addTwoVideos)} else {
-                                    setDetailVideoList(addThreeVideos);
+                        if(selectedVideo === "videoListTwo"){
+                            setDetailVideoList(videoListTwo)} else {
+                                    setDetailVideoList(videoListOne);
                                 }
                         }}>
-                        <option value="videos" className="option">보이스</option>
-                        <option value="addVideos">하트시그널</option>
-                        <option value="addTwoVideos">헬로우마마보이</option>
-                        <option value="addThreeVideos">라일락</option>
+                        <option value="videosListOne" className="option">요즘것들의 사생활</option>
+                        <option value="videoListTwo">조수용 이야기</option>
+                        <option value="addTwoVideos">휴먼스토리</option>
+                        <option value="addThreeVideos">탐구생활-돈이되는 이야기</option>
                     </select>
                 </div>
             {detailVideoList.map(video => 

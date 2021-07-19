@@ -33,13 +33,14 @@ export const LoginBlock = styled.div`
     input[type=password]{
         margin: 12px 0px 32px 0px;
     }
-    button{
+    .loginButton{
         width:340px;
         padding: 12px;
         border-radius: 6px;
         background: #77DAFF;
         color: #656565;
         border: none;
+        cursor: pointer;
     }
     .help {
         display: flex;

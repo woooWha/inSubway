@@ -26,8 +26,9 @@ const PaymentBlock = styled.div`
         width: 1210px;
         font-size: 24px;
         color: white;
-        margin: 0 auto;
+        margin: 80px auto 20px auto;
     }
+
 `
 
 const Payment = () => {

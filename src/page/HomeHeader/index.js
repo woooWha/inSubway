@@ -11,7 +11,7 @@ const HomeHeader = () => {
         <>
             <HeaderBlock>
                 <div className="left">
-                    <h1>지옥철에서</h1>
+                <Link to="/"><h1>지옥철에서</h1></Link>
                     <input placeholder="🔍  Search Brand and Routine" />
                 </div>
                 <Link to="/login"><span onClick={clear}>SIGN IN</span></Link>

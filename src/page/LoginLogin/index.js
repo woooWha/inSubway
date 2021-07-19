@@ -40,7 +40,7 @@ const LoginLogin = () => {
             <form>
                 <input id='email' name='email' placeholder='이메일을 입력해주세요' onChange={onChangeAccount} />
                 <input id='password' name='password' type="password" placeholder='비밀번호를 입력해주세요' onChange={onChangeAccount} />
-                <button onClick={onSubmitAccount}>로그인</button>
+                <button className="loginButton" onClick={onSubmitAccount}>로그인</button>
             </form>
             <div className="help">
                 <div className="left">
@@ -69,13 +69,3 @@ const LoginLogin = () => {
 }
 
 export default LoginLogin
-
-/*
-const onSubmit= (e) => {
-    e.
-    
-    Default();
-    if(checkEmail(email)) find 쓰기;
-    
-}
-*/
