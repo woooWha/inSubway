@@ -12,6 +12,7 @@ export const LoginTopBlock = styled.div`
         color: white;
         text-align:left;
         text-decoration: none;
+        z-index:2;
     }
     a {
         text-decoration:none;

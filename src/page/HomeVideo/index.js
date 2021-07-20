@@ -25,7 +25,7 @@ const HomeVideo = () => {
 
     
     const[src,setSrc] = useState(videosource);
-
+    
 
     const timeUpdate = () => {
         const videoCurrentTime = Math.round((videoRef && videoRef.current && videoRef.current.currentTime)) || 0;

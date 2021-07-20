@@ -14,12 +14,13 @@ const GlobalStyle = createGlobalStyle`
         -webkit-box-align: center;
         width: 100%;
         min-height: 100vh;
+        position: relative;
     }
     img {
         width: 100%;
         height: 100%;
         position: fixed;
-        z-index: -1;
+        z-index: 1;
         top: 0;
         left: 0;
     }

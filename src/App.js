@@ -152,89 +152,6 @@ function App() {
   }
   ])
 
-  const[videoListTwo,setVideoListTwo] = useState([
-    {
-    id: 1,
-    img: josoo,
-    title:'흙수저가 살아남는 생존방식',
-    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
-    time:'2주',
-    level:'쉬움',
-    year: 2021,
-    similar:'95%일치'
-  },
-  {
-    id: 2,
-    img: josoo,
-    title:'흙수저가 살아남는 생존방식',
-    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
-    time:'2주',
-    level:'쉬움',
-    year: 2021,
-    similar:'95%일치'
-  },
-  {
-    id: 3,
-    img: josoo,
-    title:'흙수저가 살아남는 생존방식',
-    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
-    time:'2주',
-    level:'쉬움',
-    year: 2021,
-    similar:'95%일치'
-  },
-  {
-    id: 4,
-    img: josoo,
-    title:'흙수저가 살아남는 생존방식',
-    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
-    time:'2주',
-    level:'쉬움',
-    year: 2021,
-    similar:'95%일치'
-  },
-  {
-    id: 5,
-    img: josoo,
-    title:'흙수저가 살아남는 생존방식',
-    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
-    time:'2주',
-    level:'쉬움',
-    year: 2021,
-    similar:'95%일치'
-  },
-  {
-    id: 6,
-    img: josoo,
-    title:'흙수저가 살아남는 생존방식',
-    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
-    time:'2주',
-    level:'쉬움',
-    year: 2021,
-    similar:'95%일치'
-  },
-  {
-    id: 7,
-    img: josoo,
-    title:'흙수저가 살아남는 생존방식',
-    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
-    time:'2주',
-    level:'쉬움',
-    year: 2021,
-    similar:'95%일치'
-  },
-  {
-    id: 8,
-    img: josoo,
-    title:'흙수저가 살아남는 생존방식',
-    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
-    time:'2주',
-    level:'쉬움',
-    year: 2021,
-    similar:'95%일치'
-  }
-  ])
-
   const[videoListOne,setVideoListOne] = useState([
     {
     id: 1,
@@ -347,6 +264,91 @@ function App() {
     similar:'95%일치'
   }
   ])
+
+  const[videoListTwo,setVideoListTwo] = useState([
+    {
+    id: 1,
+    img: josoo,
+    title:'흙수저가 살아남는 생존방식',
+    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
+    time:'2주',
+    level:'쉬움',
+    year: 2021,
+    similar:'95%일치'
+  },
+  {
+    id: 2,
+    img: josoo,
+    title:'흙수저가 살아남는 생존방식',
+    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
+    time:'2주',
+    level:'쉬움',
+    year: 2021,
+    similar:'95%일치'
+  },
+  {
+    id: 3,
+    img: josoo,
+    title:'흙수저가 살아남는 생존방식',
+    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
+    time:'2주',
+    level:'쉬움',
+    year: 2021,
+    similar:'95%일치'
+  },
+  {
+    id: 4,
+    img: josoo,
+    title:'흙수저가 살아남는 생존방식',
+    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
+    time:'2주',
+    level:'쉬움',
+    year: 2021,
+    similar:'95%일치'
+  },
+  {
+    id: 5,
+    img: josoo,
+    title:'흙수저가 살아남는 생존방식',
+    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
+    time:'2주',
+    level:'쉬움',
+    year: 2021,
+    similar:'95%일치'
+  },
+  {
+    id: 6,
+    img: josoo,
+    title:'흙수저가 살아남는 생존방식',
+    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
+    time:'2주',
+    level:'쉬움',
+    year: 2021,
+    similar:'95%일치'
+  },
+  {
+    id: 7,
+    img: josoo,
+    title:'흙수저가 살아남는 생존방식',
+    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
+    time:'2주',
+    level:'쉬움',
+    year: 2021,
+    similar:'95%일치'
+  },
+  {
+    id: 8,
+    img: josoo,
+    title:'흙수저가 살아남는 생존방식',
+    text:'이거 고작 몇 줄이라고 4시간 23분을 소비했다...',
+    time:'2주',
+    level:'쉬움',
+    year: 2021,
+    similar:'95%일치'
+  }
+  ])
+
+
 
 
 

@@ -9,6 +9,7 @@ export const LoginBlock = styled.div`
     padding: 30px;
     box-sizing: border-box;
     color: white;
+    z-index:3;
     a {
         text-decoration: none;
     }
@@ -33,6 +34,18 @@ export const LoginBlock = styled.div`
     input[type=password]{
         margin: 12px 0px 32px 0px;
     }
+    
+    
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+	 transition: background-color 5000s ease-in-out 0s;
+	 -webkit-transition: background-color 9999s ease-out;
+     -webkit-text-fill-color: white !important;
+     -webkit-text-fill-background-color: #585858;
+   }
+
     .loginButton{
         width:340px;
         padding: 12px;

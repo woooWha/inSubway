@@ -17,7 +17,7 @@ const HomeHeader = () => {
                 <Link to="/login"><span onClick={clear}>SIGN IN</span></Link>
             </HeaderBlock>
             <HeaderSubBlock>
-                <span>LiFE</span>
+                <span onClick={()=> window.scrollTo({top:880, left:0, behavior:'smooth'})}>LiFE</span>
                 <span>BRANDING</span>
                 <span>ROUTINE</span>
             </HeaderSubBlock>

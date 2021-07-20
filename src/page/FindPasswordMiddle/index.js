@@ -24,7 +24,7 @@ const FindMiddle = () => {
         <FindMiddleBlock>
             <h1>비밀번호 찾기</h1>
             <input type='text' name="email" onChange={onChangeEmail} placeholder='이메일 주소를 입력해주세요' />
-            <button onClick={findPassword}>임시 비밀번호 보내기</button>
+            <button className="findButton" onClick={findPassword}>임시 비밀번호 보내기</button>
         </FindMiddleBlock>
     )
 }

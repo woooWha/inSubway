@@ -10,6 +10,7 @@ export const FooterBlock = styled.div`
     margin-bottom: 20px;
     margin-top: 60px;
     background: black;
+    z-index:1;
     .middle div {
         cursor: pointer;
     }
@@ -36,7 +37,7 @@ export const FooterBlock = styled.div`
     }
     .footer-background{
         width: 100%;
-        height: 280px;
+        height: 360px;
         background: black;
         position: absolute;
         left:0;

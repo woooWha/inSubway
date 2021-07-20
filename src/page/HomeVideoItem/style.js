@@ -9,27 +9,20 @@ export const VideoItemBlock = styled.div`
     border-bottom-left-radius: 14px;
     border-bottom-right-radius: 14px;
     position: relative;
-    transition: 0.1s all 1s ease-in;
     z-index:0;
     .textboxHideText{
         opacity: 0;
-        transition: 0.1s all 1s ease-in;
         font-size: 8px;
     }
-    .textbox-bottom{
+    .textboxBottom{
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        width: 100%;
+        right: 10px;
+        bottom: 6px;
+        font-size: 8px;
         opacity: 0;
-        transition: 0.1s all 1s ease-in;
-    }
-    :hover{
-        background: gray;
-        transform:scale(1.3);
-        z-index: 999;
-        .textboxHideText{
-            opacity: 1;
-        }
-        .textbox-bottom{
-            opacity: 1;
-        }
     }
     img {
         width: 100%;
@@ -45,15 +38,6 @@ export const VideoItemBlock = styled.div`
     }
     .textbox {
         padding: 6px 10px 10px 6px;
-    }
-    .textbox-bottom {
-        display: flex;
-        justify-content: space-around;
-        position: absolute;
-        width: 100%;
-        right: 10px;
-        bottom: 6px;
-        font-size: 8px;
     }
     .link {
         text-decoration: none;
