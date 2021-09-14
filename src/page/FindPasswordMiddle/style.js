@@ -19,6 +19,7 @@ export const FindMiddleBlock = styled.div`
         margin-bottom: 16px;
         border-radius: 6px;
         outline: none;
+        color: white;
     }
     input:-webkit-autofill,
     input:-webkit-autofill:hover,

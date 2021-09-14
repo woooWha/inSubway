@@ -25,6 +25,7 @@ export const SignUpBlock = styled.div`
         outline: none;
         padding: 14px;
         border-radius: 4px;
+        color: white;
         ::placeholder{
             color: rgba(100,100,100,0.6);
         }
